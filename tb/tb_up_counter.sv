@@ -3,7 +3,11 @@ module top (
     input  logic        sys_rst_n,
     output logic [15:0] timer_val
 );
-
+	initial begin
+		$dumpfile("dump.vcd");
+		$dumpvars(0, top);
+	end
+	
     logic timer_done;
 
     // Instantiate a 16-bit version of up_counter
